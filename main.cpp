@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 	int opcion = 0;
 	string nombre, id, edad;
 	do{
-		cout<<"Bienvenido al casino, ingrese su opcion:";
+		cout<<"Bienvenido al casino, ingrese su opcion:"<<endl;
 		cout<<"1. Crear Usuario"<<endl;
 		cout<<"2. Entrar al casino"<<endl;
 		cout<<"3. Salir"<<endl;
@@ -32,6 +32,7 @@ int main(int argc, char const *argv[])
 				cout<<"2. Repartidor"<<endl;
 				cout<<"3. Jugador"<<endl;
 				cout<<"4. Salir"<<endl;
+				cin>>opcion2;
 				if (opcion2 == 1)
 				{
 					string experiencia, rango;
@@ -97,13 +98,13 @@ int main(int argc, char const *argv[])
 				}
 		}while(opcion2!=4);
 	}
-	/*if (opcion == 2)
+	if (opcion == 2)
 	{
 		int opcionAdmin, opcionJugador;
 		int opcion2;
-		cout<<"Ingrese el nombrre: ";
+		cout<<"Ingrese el nombrre: "<<endl;
 		cin>>nombre;
-		cout<<"Ingrese su identidad: ";
+		cout<<"Ingrese su identidad: "<<endl;
 		cin>>id;
 		Persona* tempPersona;
 		Mesa* tempMesa;
@@ -117,21 +118,21 @@ int main(int argc, char const *argv[])
 					if (dynamic_cast<Administrador*>(listaUsuarios.at(i)) != NULL)
 					{
 						do{
-							cout<<"1. Crear Mesa";
-							cout<<"2. Modificar Mesa";
-							cout<<"3. Borrar Mesa";
-							cout<<"4. Salir";
+							cout<<"1. Crear Mesa"<<endl;
+							cout<<"2. Modificar Mesa"<<endl;
+							cout<<"3. Borrar Mesa"<<endl;
+							cout<<"4. Salir"<<endl;
 							cin>>opcionAdmin;
 
 							if(opcionAdmin == 1){
 
 								string mesa, numMesa;
-								cout<<"Ingrese el numero de la mesa";
+								cout<<"Ingrese el numero de la mesa"<<endl;
 								cin>>numMesa;
-								cout<<"Ingrese el tipo de mesa:";
-								cout<<"1. V.I.P";
-								cout<<"2. Clasica";
-								cout<<"3. Viajero";
+								cout<<"Ingrese el tipo de mesa:"<<endl;
+								cout<<"1. V.I.P"<<endl;
+								cout<<"2. Clasica"<<endl;
+								cout<<"3. Viajero"<<endl;
 								cin>>opcion2;
 								if (opcion2 == 1)
 								{
@@ -141,8 +142,8 @@ int main(int argc, char const *argv[])
 								}else if(opcion2==3){
 									mesa="Mesa Viajero";
 								}
-								Mesa* tempMesa=new Mesa(numMesa,mesa);
-								for (int i = 0; i < listaUsuarios.size(); ++i)
+								//Mesa* tempMesa=new Mesa(numMesa,mesa);
+								/*for (int i = 0; i < listaUsuarios.size(); ++i)
 								{
 									if (dynamic_cast<Repartidor*>(listaUsuarios.at(i))!=NULL)
 									{
@@ -164,25 +165,26 @@ int main(int argc, char const *argv[])
 								cout<<"Ingerese el numero de Jugador a asignar a la mesa:";
 								cin>>opcion2;
 								tempMesa->setJugador(dynamic_cast<Jugador*>(listaUsuarios.at(opcion2)));
-								
+							*/	
 							}else if(opcionAdmin == 2){
+								cout<<"Ingrese el numero de la mesa que desea Modificar:";
 								for (int i = 0; i < listaMesa.size(); ++i)
 								{
-									cout<<"Numero de mesa:"<<i<<listaMesa.at(i)->toString()<<"\n";
+									//cout<<"Numero de mesa:"<<i<<listaMesa.at(i)->toString()<<"\n";
 								}
-								cout<<"Ingrese el numero de la mesa que desea Modificar:";
+								
 								cin>>opcion2;
 								Mesa* tempMesa=listaMesa.at(opcion2);
-								cout<<"Ingrese su opcion: ";
-								cout<<"1. Modificar Numero Mesa";
-								cout<<"2. Modficar Tipo Mesa";
-								cout<<"3. Modificar Repartidor";
-								cout<<"4. Modificar Jugador";
+								cout<<"Ingrese su opcion: "<<endl;
+								cout<<"1. Modificar Numero Mesa"<<endl;
+								cout<<"2. Modficar Tipo Mesa"<<endl;
+								cout<<"3. Modificar Repartidor"<<endl;
+								cout<<"4. Modificar Jugador"<<endl;
 
 								int opcionMesa;
 								string num;
 								cin>>opcionMesa;
-								if(opcionMesa==1){
+								/*if(opcionMesa==1){
 									cout<<"Ingrese el nuevo Numero de la mesa:";
 									cin>>num;
 									tempMesa->setNumeroMesa(num);
@@ -226,41 +228,36 @@ int main(int argc, char const *argv[])
 								cin>>opcion2;
 								tempMesa->setJugador(dynamic_cast<Jugador*>(listaUsuarios.at(opcion2)));
 								cout<<"Se modifico exitosamente!\n";
-								}
+								}*/
 							}
 							else if (opcionAdmin == 3)
 							{
-								for (int i = 0; i < listaMesa.size(); ++i)
+								cout<<"Ingrese el numero de la mesa que desea eliminar:";
+								/*for (int i = 0; i < listaMesa.size(); ++i)
 								{
 									cout<<"Numero de mesa:"<<i<<listaMesa.at(i)->toString()<<"\n";
 								}
-								cout<<"Ingrese el numero de la mesa que desea eliminar:";
+								
 								cin>>opcion2;
 								listaMesa.erase(listaMesa.begin()+opcion2);
-								cout<<"La mesa a sido eliminada!\n";
+								cout<<"La mesa a sido eliminada!\n";*/
 							}
 						} while (opcionAdmin!=4);
-					}else if(dynamic_cast<Jugador*>(listaUsuarios.at(i))!=NULL){
-						tempJugador=dynamic_cast<Jugador*>(tempPersona);
-						for (int i = 0; i <listaMesa.size() ; ++i)
-						{
-							if(tempJugador->getNombre()==listaMesa.at(i)->getJugador()->getNombre()){
-								tempMesa=listaMesa.at(i);
-							}
-						}
+					}
+					else if(dynamic_cast<Jugador*>(listaUsuarios.at(i))!=NULL){
+						
 						do
 						{
-							cout<<"1. Empezar un nuevo juego";
-							cout<<"2. Ver Dinero";
-							cout<<"3. Salir";
+							cout<<"1. Empezar un nuevo juego"<<endl;
+							cout<<"2. Ver Dinero"<<endl;
+							cout<<"3. Salir"<<endl;
 							cin>>opcionJugador;
 							
 						} while (opcion != 3);
 					}
 				}
 			}	
-	}*/
-			
-	}while(opcion != 3);
+		}	
+}while(opcion != 3);
 	return 0;
 }
