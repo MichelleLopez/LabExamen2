@@ -14,7 +14,7 @@ private:
 	Baraja* nuevaBaraja;
 
 public:
-	Repartidor(string, string, string, string,int);
+	Repartidor(string, string, string, string, int);
 	~Repartidor();
 	void setDinero(int);
 	void setDificultad(string);

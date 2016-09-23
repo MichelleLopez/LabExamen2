@@ -13,7 +13,7 @@ private:
 	vector<Carta*> Mano;
 
 public:
-	Jugador(string,string,string,string,string,int);
+	Jugador(string, string, string, string, string,int);
 	~Jugador();
 	void setMano(Carta*);
 	void setProcedencia(string);

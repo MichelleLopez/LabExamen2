@@ -5,7 +5,7 @@ using std::string;
 
 class Persona{
 private:
-	string nombre, edad, id;
+	string nombre, id, edad;
 
 public:
 	Persona(string, string, string);
