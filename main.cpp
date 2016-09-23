@@ -250,7 +250,9 @@ int main(int argc, char const *argv[])
 						}
 						do
 						{
-							cout<<"1-Empezar un nuevo juego \n2-Ver Dinero\n3-Salir";
+							cout<<"1. Empezar un nuevo juego";
+							cout<<"2. Ver Dinero";
+							cout<<"3. Salir";
 							cin>>opcionJugador;
 							
 						} while (opcion != 3);
