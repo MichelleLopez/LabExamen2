@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 		cout<<"1. Crear Usuario"<<endl;
 		cout<<"2. Entrar al casino"<<endl;
 		cout<<"3. Salir"<<endl;
-
+		cin>>opcion;
 		if(opcion == 1){
 			int opcion2 = 0;
 			do{
@@ -97,7 +97,7 @@ int main(int argc, char const *argv[])
 				}
 		}while(opcion2!=4);
 	}
-	if (opcion == 2)
+	/*if (opcion == 2)
 	{
 		int opcionAdmin, opcionJugador;
 		int opcion2;
@@ -259,9 +259,8 @@ int main(int argc, char const *argv[])
 					}
 				}
 			}	
-	}
-
-
+	}*/
+			
 	}while(opcion != 3);
 	return 0;
 }

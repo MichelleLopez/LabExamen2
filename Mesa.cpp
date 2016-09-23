@@ -24,7 +24,7 @@ void mesa::setJugador(Jugador* nuevoJugador){
 }
 
 void mesa::setNumeroMesa(string numero){
-	this->numero=numero;
+	this->numero = numero;
 }
 
 void mesa::setMesa(string mesa){
