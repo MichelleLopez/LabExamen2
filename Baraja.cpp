@@ -89,15 +89,11 @@ Baraja::~Baraja(){
 
 Carta* Baraja::getCarta(){
 	srand(time(NULL));
-	int posision, random;
 
-    random=(1 + rand() % 2);
-    if(random == 1){
-    	posision = (1+rand()%26);
-    }else{
-    	posision = (25 + rand() % 26);
-    }
-	this->baraja.erase(this->baraja.begin() + posision);
+	int random;
+    random = (1+rand()%26);
 
-	return this->baraja.at(posision);
+	this->baraja.erase(this->baraja.begin() + random);
+
+	return this->baraja.at(random);
 }

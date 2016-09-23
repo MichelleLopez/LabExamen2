@@ -1,6 +1,6 @@
 #pragma once
+#include "Baraja.h"
 #include "Persona.h"
-#include "Bajara.h"
 #include <string>
 #include <vector>
 
@@ -11,10 +11,10 @@ class Repartidor:public Persona
 private:
 	string dificultad;
 	int dinero;
-	Baraja* Baraja;
+	Baraja* nuevaBaraja;
 
 public:
-	Repartidor(string,string,string,string,int);
+	Repartidor(string, string, string, string,int);
 	~Repartidor();
 	void setDinero(int);
 	void setDificultad(string);
