@@ -26,76 +26,96 @@ int main(int argc, char const *argv[])
 
 		if(opcion == 1){
 			int opcion2 = 0;
-			cout<<"¿Que tipo de usuario desea crear?:"<<endl;
-			cout<<"1. Administrador"<<endl;
-			cout<<"2. Repartidor"<<endl;
-			cout<<"3. Jugador"<<endl;
-			cout<<"4. Salir"<<endl;
-			if (opcion2 == 1)
-			{
-				string experiencia, rango;
-				int sueldo;
-				cout<<"Ingrese el Nombre:";
-				cin>>nombre;
-				cout<<"Ingrese la edad:";
-				cin>>edad;
-				cout<<"Ingrese el Numero de identidad:";
-				cin>>id;
-				cout<<"Ingrese los años de experiencia que tiene: ";
-				cin>>experiencia;
-				cout<<"Seleccione su rango: ";
-				cout<<"1. Gerente ttempo completo";
-				cout<<"2. Gerente eedio tiempo";
-				cout<<"3. Gerente General";
-				cin>>rango;
-				cout<<"Ingrese el sueldo:";
-				cin>>sueldo;
-				listaUsuarios.push_back(new Administrador(nombre, edad, id, experiencia, rango, sueldo));
-			}else if(opcion2==2){
-				string dificultad;
-				int dinero, opcionDificultad;
-				cout<<"Ingrese su Nombre:";
-				cin>>nombre;
-				cout<<"Ingrese su edad:";
-				cin>>edad;
-				cout<<"Ingrese su Numero de Identidad:";
-				cin>>id;
-				cout<<"Elija una dificultad:";
-				cout<<"1. Dificil"<<endl;
-				cout<<"2. Intermedia"<<endl;
-				cout<<"3. Facil"<<endl;
-				cin>>opcionDificultad;
-				if(opcionDificultad == 1){
-					dificultad = "Dificil";
-				}else if(opcionDificultad == 2){
-					dificultad = "Intermedia";
-				}else if(opcionDificultad == 3){
-					dificultad = "Facil";
-				}else{
-					dificultad="Desconocida";
-				}
-				cout<<"Ingrese la cantidad de dinero:";
-				cin>>dinero;
-				listaUsuarios.push_back(new Repartidor(nombre, edad, id, dificultad, dinero));
-			}else if(opcion2 == 3){
-					string procedencia, apodo;
-					int dinero;
-					cout<<"Ingrese el nombre:";
+			do{
+				cout<<"¿Que tipo de usuario desea crear?:"<<endl;
+				cout<<"1. Administrador"<<endl;
+				cout<<"2. Repartidor"<<endl;
+				cout<<"3. Jugador"<<endl;
+				cout<<"4. Salir"<<endl;
+				if (opcion2 == 1)
+				{
+					string experiencia, rango;
+					int sueldo;
+					cout<<"Ingrese el Nombre:";
+					cin>>nombre;
+					cout<<"Ingrese la edad:";
+					cin>>edad;
+					cout<<"Ingrese el Numero de identidad:";
+					cin>>id;
+					cout<<"Ingrese los años de experiencia que tiene: ";
+					cin>>experiencia;
+					cout<<"Seleccione su rango: ";
+					cout<<"1. Gerente ttempo completo";
+					cout<<"2. Gerente eedio tiempo";
+					cout<<"3. Gerente General";
+					cin>>rango;
+					cout<<"Ingrese el sueldo:";
+					cin>>sueldo;
+					listaUsuarios.push_back(new Administrador(nombre, edad, id, experiencia, rango, sueldo));
+				}else if(opcion2==2){
+					string dificultad;
+					int dinero, opcionDificultad;
+					cout<<"Ingrese su Nombre:";
 					cin>>nombre;
 					cout<<"Ingrese su edad:";
 					cin>>edad;
 					cout<<"Ingrese su numero de identidad:";
 					cin>>id;
-					cout<<"Ingrese su procedencia:";
-					cin>>procedencia;
-					cout<<"Ingrese su apodo:";
-					cin>>apodo;
+					cout<<"Elija una dificultad:";
+					cout<<"1. Dificil"<<endl;
+					cout<<"2. Intermedia"<<endl;
+					cout<<"3. Facil"<<endl;
+					cin>>opcionDificultad;
+					if(opcionDificultad == 1){
+						dificultad = "Dificil";
+					}else if(opcionDificultad == 2){
+						dificultad = "Intermedia";
+					}else if(opcionDificultad == 3){
+						dificultad = "Facil";
+					}else{
+						dificultad="Desconocida";
+					}
 					cout<<"Ingrese la cantidad de dinero:";
 					cin>>dinero;
-					listaUsuarios.push_back(new Jugador(nombre, edad, id, procedencia, apodo, dinero));
-
+					listaUsuarios.push_back(new Repartidor(nombre, edad, id, dificultad, dinero));
+				}else if(opcion2 == 3){
+						string procedencia, apodo;
+						int dinero;
+						cout<<"Ingrese el nombre:";
+						cin>>nombre;
+						cout<<"Ingrese su edad:";
+						cin>>edad;
+						cout<<"Ingrese su numero de identidad:";
+						cin>>id;
+						cout<<"Ingrese su procedencia:";
+						cin>>procedencia;
+						cout<<"Ingrese su apodo:";
+						cin>>apodo;
+						cout<<"Ingrese la cantidad de dinero:";
+						cin>>dinero;
+						listaUsuarios.push_back(new Jugador(nombre, edad, id, procedencia, apodo, dinero));
 				}
-		}
+		}while(opcion2!=4);
+	}
+	if (opcion == 2)
+	{
+		cout<<"Ingrese el nombrre: ";
+		cin>>nombre;
+		cout<<"Ingrese su identidad: ";
+		cin>>id;
+		Persona* tempPersona;
+		for (int i = 0; i <listaUsuarios.size() ; ++i)
+			{
+				if(nombre == listaUsuarios.at(i)->getNombre() && id == listaUsuarios.at(i)->getId()){
+					tempPersona = listaUsuarios.at(i);
+					if (dynamic_cast<Administrador*>(listaUsuarios.at(i)) != NULL)
+					{}
+			}	
+
+	}
+
+	
+		
 		opcion = 3;
 
 	}while(opcion != 3);
